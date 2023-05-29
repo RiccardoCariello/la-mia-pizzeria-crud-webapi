@@ -1,0 +1,25 @@
+﻿@using La_Mia_Pizzeria.Database;
+
+@model List<PizzaModel>;
+
+<div class="container">
+    
+    <div class="row h-100">
+        
+        <div class="col-12 justify-content-center align-items-center">
+            <!--<img src="~/img/pizzapng.png" alt="pizzagustosa" class="justify-content-end" width=300px height="300px" />-->
+                
+            <div class="card, text-center bg-dark bg-opacity-50 my-5 h-auto pt-5" >
+                <div class="card-body my-3 mx-3 p-3">
+                    <h1 class="card-title my-3 mx-3">Assapora l'eccellenza delle nostre pizze artigianali</h1>
+                    
+                    <p class="card-text fs-5 mt-5 mx-3">Benvenuti nella nostra pizzeria, dove l'arte culinaria si fonde con l'autentico sapore italiano. Siamo appassionati nel creare pizze gourmet, preparate con ingredienti freschi e selezionati con cura. Scegli tra una varietà di gustose opzioni, dall'impasto leggero e croccante alle combinazioni di sapori uniche. Siamo pronti a deliziare i tuoi sensi e a portarti in un viaggio culinario che ti lascerà desiderare sempre di più. Ordina adesso la tua pizza preferita e scopri perché siamo la scelta preferita per gli amanti delle pizze di qualità.</p>
+                    <button class=" btn btn-outline-light me-2 btn-lg" width=100px><a href="@Url.Action("Index", "Pizza")" class=" fw-bold btn-light btn-outline-dark text-light " type="button">Home</a></button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

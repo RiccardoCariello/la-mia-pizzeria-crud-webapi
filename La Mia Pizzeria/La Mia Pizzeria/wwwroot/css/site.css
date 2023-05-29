@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+@font-face {
+    font-family: 'Dancing Script', cursive;
+}
+
+html {
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+/*
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        
+    }
+}
+*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    text-align:center;
+    
+    
+}
+
+.fs_large{
+    font-size: 24px;
+}
+
+.bg_color_blue {
+    /*background-color: burlywood;*/
+    background-image: url('../img/PizzaBackgroundN2Medium.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+}
+/*
+.headerImage {
+    
+}
+    */
+
+.square {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    /*max-width: 300px;
+    max-height:200px;
+    */
+}
+
+.card_size {
+    height: 600px;
+    width: auto;
+}
+.card_body_size {
+    height: 625 px;
+    width: 230 px;
+}
+
+.size_big{
+    
+}
+
+
+
+
+/*
+svg {
+    width :24px; 
+    height:24px;
+    fill: currentColor; 
+    border-radius: 50%; 
+    border: 1px solid #000;
+}
+    */
+

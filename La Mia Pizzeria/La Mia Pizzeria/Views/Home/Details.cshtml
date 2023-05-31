@@ -1,52 +1,64 @@
-﻿@model PizzaModel;
+﻿
+<div id="card_container" class="container mt-5 ">
+    
+</div>
+
+
+@section Scripts{
+     
+
+         const url = window.location.href;
+         const indexLast = url.lastIndexOf('/');
+         const id = url.substring(indexLast + 1)
+
+         axios.get('https://localhost:7017/api/PizzaApi/SearchById/' + id).then((result) =>{
+             const pizza = result.data;
+
+             debugger;
+
+             document.getElementById("card_container").innerHTML = `
+                <div class="row my-5 align-content-center">
+
+                    <div class="col-12 text-center text-white">
+                        <h2>${pizza.name}</h2>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row row-cols-1 row-cols-md-2 g-4 ">
 
 
 
-<div class="container mt-5 ">
-    <div class="row my-5 align-content-center">
-        
-        <div class="col-12 text-center text-white">
-            <h2>@Model.Name</h2>
-        </div>
-        
 
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="row row-cols-1 row-cols-md-2 g-4 ">
+                            <div class="col  w-50 p-3 d-inline-block">
+                                <div class="card h-100 text-bg-dark mb-3 text-center ">
+                                    <img src="${pizza.imgSource}" class="card-img-top square" alt="pizza coi funghi">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${pizza.name}</h5>
+                                        <p class="card-text ">${pizza.description}</p>
+
+                                    </div>
+                                    <div class="card-footer bg-transparent border-dark pb-5">
+                                        <h4>Prezzo :${pizza.price} €</h4>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
 
-
-                <div class="col  w-50 p-3 d-inline-block">
-                    <div class="card h-100 text-bg-dark mb-3 text-center ">
-                        <img src="@Model.ImgSource" class="card-img-top square" alt="pizza coi funghi">
-                        <div class="card-body">
-                            <h5 class="card-title">@Model.Name</h5>
-                            <p class="card-text ">@Model.Description</p>
-                            <p>
-                                <strong>Categoria:</strong>
-                                @if (Model.Cathegory != null)
-                                {
-                                    @Model.Cathegory.Name;
-                                }
-                                else
-                                {
-                                    <span>Nessuna categoria</span>
-                                }
-                            </p>
-                        </div>
-                        <div class="card-footer bg-transparent border-dark pb-5">
-                            <h4>Prezzo :@Model.Price.ToString("0.00") €</h4>
 
                         </div>
                     </div>
                 </div>
+             `
+
+     }).catch((error) => {
+         console.error("Errore");
+     });
 
 
 
-
-            </div>
-        </div>
-    </div>
-</div>
+}

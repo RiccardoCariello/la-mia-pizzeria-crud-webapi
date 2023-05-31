@@ -82,11 +82,11 @@ Un metodo che dato l'id di una pizza restituisca le info sulla pizza con quel id
         }
 
         [HttpPost("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete([FromBody]int id)
         {
             using(PizzaContext db = new PizzaContext())
             {
-                PizzaModel pizza = db.Pizze.Where(pizza => pizza.Id==id).FirstOrDefault();
+                PizzaModel? pizza = db.Pizze.Where(pizza => pizza.Id==id).FirstOrDefault();
 
                 if(pizza != null)
                 {
